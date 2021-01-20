@@ -27,6 +27,7 @@ jobs:
       - run:
           name: Test
           command: echo "running tests"
+                   echo $Developer
 
 workflows:
   # Below is the definition of your workflow.
