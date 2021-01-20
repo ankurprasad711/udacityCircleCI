@@ -27,7 +27,21 @@ jobs:
       - run:
           name: Test
           command: echo "running tests"
-                   echo $Developer
+                   echo "tests completed successfully" > output.txt
+      - persist_to_workspace:
+          root: /
+          paths:
+            - output.txt
+  
+  print-test:
+    docker: 
+      - image: cimg/openjdk:11.0
+    steps:
+      - attach_workspace:
+          at: /
+      - run:
+          name: print
+          command: cat output.txt
 
 workflows:
   # Below is the definition of your workflow.
@@ -38,3 +52,6 @@ workflows:
     jobs:
       - welcome/run
       - build-and-test
+      - print-test
+          requires:
+            - build-and-test
