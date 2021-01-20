@@ -52,6 +52,6 @@ workflows:
     jobs:
       - welcome/run
       - build-and-test
-      - print-test
+      - print-test:
           requires:
             - build-and-test
