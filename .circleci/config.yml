@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Test
           command: echo "running tests"
-                   echo "tests completed successfully" > output.txt
+                   echo "tests completed successfully" > ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
@@ -41,7 +41,7 @@ jobs:
           at: ~/
       - run:
           name: print
-          command: cat output.txt
+          command: cat ~/output.txt
 
 workflows:
   # Below is the definition of your workflow.
