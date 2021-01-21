@@ -4,8 +4,12 @@ Resources:
    Properties:
      SecurityGroups:
        - !Ref InstanceSecurityGroup
-     KeyName: ansible
-     ImageId: ami-0ac73f33a1888c64a
+     KeyName: "ansible"
+     ImageId: "ami-0ac73f33a1888c64a"
+     BlockDeviceMappings:
+       - DeviceName: "/dev/sdk"
+         Ebs:
+           VolumeSize: 10
 
   InstanceSecurityGroup:
    Type: 'AWS::EC2::SecurityGroup'

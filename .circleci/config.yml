@@ -63,9 +63,11 @@ jobs:
       - run:
           name: infrastructure
           command: |
-            aws cloudformation deploy \
-              --template-file template.yml \
-              --stack-name circleci-stack
+            aws cloudformation create-stack \
+              --stack-name circleci1 \
+              --template-body template.yml \
+              --capabilities CAPABILITY_NAMED_IAM
+              
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
