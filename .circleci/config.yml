@@ -65,7 +65,7 @@ jobs:
           command: |
             aws cloudformation create-stack \
               --stack-name circleci1 \
-              --template-body template.yml \
+              --template-body file://template.yml \
               --capabilities CAPABILITY_NAMED_IAM
               
 workflows:
