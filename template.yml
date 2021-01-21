@@ -5,7 +5,7 @@ Resources:
      SecurityGroups:
        - !Ref InstanceSecurityGroup
      KeyName: ansible
-     ImageId: 'ami-0a91cd140a1fc148a'
+     ImageId: ami-0ac73f33a1888c64a
 
   InstanceSecurityGroup:
    Type: 'AWS::EC2::SecurityGroup'
